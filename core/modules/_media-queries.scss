@@ -1,0 +1,20 @@
+//--------------------------------
+//    Framework Media Queries
+//--------------------------------
+
+@mixin media-tablet {
+    @media screen and (min-width: 600px) and (-webkit-min-device-pixel-ratio: 1) {
+        @content;
+    }
+}
+
+@mixin media-laptop {
+    @media screen and (min-width: 1025px) {
+        @content;
+    }
+}
+@mixin media-desktop {
+    @media screen and (min-width: 1680px) {
+        @content;
+    }
+}

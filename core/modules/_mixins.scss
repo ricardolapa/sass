@@ -1,0 +1,91 @@
+//--------------------------------
+//       Framework Mixins
+//--------------------------------
+@mixin transition ($element, $duration, $animation) {
+    transition: $element $duration $animation;
+    -webkit-transition: $element $duration $animation;
+    -moz-transition: $element $duration $animation;
+    -o-transition: $element $duration $animation;
+}
+@mixin delay ($duration) {
+    transition-delay: $duration;
+    -webkit-transition-delay: $duration;
+    -moz-transition-delay: $duration;
+}
+
+@mixin border-radius($all: 0) {
+    @if $all {
+        border-radius: $all;
+        -webkit-border-radius: $all;
+        -moz-border-radius: $all;
+    }
+}
+
+@mixin box-shadow($value) {
+    box-shadow: $value;
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+}
+
+@mixin appearance($value) {
+    appearance: $value;
+    -webkit-appearance: $value;
+    -moz-appearance: $value;
+    &::-ms-expand { /* for IE 11 */
+        display: none;
+    }
+}
+
+@mixin translate($x, $y) {
+    transform: translate($x, $y);
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -o-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+}
+@mixin rotate($value) {
+    transform: rotate($value);
+    -webkit-transform: rotate($value);
+    -ms-transform: rotate($value);
+    -moz-transform: rotate($value);
+}
+
+@mixin img-scale($value) {
+    -webkit-transform:scale($value); /* Safari and Chrome */
+    -moz-transform:scale($value); /* Firefox */
+    -ms-transform:scale($value); /* IE 9 */
+    -o-transform:scale($value); /* Opera */
+     transform:scale($value);
+}
+
+@mixin input-placeholder($element) {
+    #{$element}::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+      @content;
+    }
+    #{$element}::-moz-placeholder { /* Firefox 19+ */
+      @content;
+    }
+    #{$element}:-ms-input-placeholder { /* IE 10+ */
+      @content;
+    }
+    #{$element}:-moz-placeholder { /* Firefox 18- */
+      @content;
+    }
+}
+
+@mixin img-scale($value) {
+    transform: scale($value);
+    -webkit-transform: scale($value);
+    -moz-transform: scale($value);
+    -ms-transform: scale($value);
+    -o-transform: scale($value);
+}
+
+/**
+* Forms
+*/
+@mixin circle($diameter) {
+    @include border-radius(50%);
+    width: $diameter;
+    height: $diameter;
+}
