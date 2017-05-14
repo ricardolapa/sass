@@ -1,2 +1,2 @@
 # sass
-Persona SASS framework
+Personal SASS framework
