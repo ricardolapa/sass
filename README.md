@@ -63,7 +63,7 @@ h2.main-title {
 ```
 
 
-### Functions and Mixins
+### Mixins
 
 ```
 @mixin transition ($element, $duration, $animation) {
